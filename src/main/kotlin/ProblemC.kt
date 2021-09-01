@@ -6,11 +6,9 @@ class ProblemC {
         var studentsSkilss = readListInt().sorted()
 
         var commonSkillsToStudy = 0;
-        var count =  0;
 
-        while (count <= studentsSkilss.size - 1) {
-            commonSkillsToStudy += studentsSkilss.get(count + 1) - studentsSkilss.get(count)
-            count +=2
+        for (i in 0 until studentsSkilss.size - 1 step 2) {
+            commonSkillsToStudy += studentsSkilss.get(i + 1) - studentsSkilss.get(i)
         }
         println(commonSkillsToStudy)
     }

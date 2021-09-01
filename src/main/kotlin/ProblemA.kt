@@ -2,8 +2,8 @@ class ProblemA {
 
     fun main() {
 
-        var requestQuantity = readInt()
-        var positionList = ArrayList<Long>()
+        val requestQuantity = readInt()
+        val positionList = ArrayList<Long>()
 
         for (i in 1..requestQuantity) {
             val requestsData = readListLong()

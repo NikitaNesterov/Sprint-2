@@ -16,20 +16,18 @@ class ProblemB {
             val divisionReminder = lineLength % symbolsQuantity
             val frequency = (lineLength - divisionReminder) / symbolsQuantity
 
-            var stringToBuild = mutableListOf<String>()
+            var wantedString = ""
 
-            for (k in 1..frequency) {
-                for (i in 0..symbolsQuantity - 1) {
-                    stringToBuild.add('a'.plus(i).toString())
-                }
+            for (i in 0 until symbolsQuantity) {
+                wantedString += ('a'.plus(i).toString().repeat(frequency))
             }
 
             for (count in 1..divisionReminder) {
-                stringToBuild.add('a'.plus((Math.random() * symbolsQuantity).roundToInt()).toString())
+                wantedString += ('a'.plus((Math.random() * symbolsQuantity).roundToInt()).toString())
             }
 
             requestResults.add(buildString {
-                for (item in stringToBuild.shuffled()) {
+                for (item in wantedString.toMutableList().shuffled()) {
                     append(item)
                 }
             })
@@ -37,3 +35,8 @@ class ProblemB {
         requestResults.forEach { println(it) }
     }
 }
+
+
+
+
+

@@ -9,7 +9,7 @@ class ProblemD {
             var moneyInUse = readListLong().sorted()
 
             var maxProfit = 0L
-            for (k in moneyInUse.indices - 1) {
+            for (k in 0 until clientsQuantity) {
                 val profitToCompare = moneyInUse[k] * (clientsQuantity - k)
                 if (profitToCompare > maxProfit) {
                     maxProfit = profitToCompare
